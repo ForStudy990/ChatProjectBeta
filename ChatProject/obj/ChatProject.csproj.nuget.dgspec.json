@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Documents\\ChatProject\\ChatProject\\ChatProject.csproj": {}
+    "C:\\Users\\User\\Documents\\GitHub\\ChatProjectBeta\\ChatProject\\ChatProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Documents\\ChatProject\\ChatProject\\ChatProject.csproj": {
+    "C:\\Users\\User\\Documents\\GitHub\\ChatProjectBeta\\ChatProject\\ChatProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Documents\\ChatProject\\ChatProject\\ChatProject.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\ChatProjectBeta\\ChatProject\\ChatProject.csproj",
         "projectName": "ChatProject",
-        "projectPath": "C:\\Users\\User\\Documents\\ChatProject\\ChatProject\\ChatProject.csproj",
+        "projectPath": "C:\\Users\\User\\Documents\\GitHub\\ChatProjectBeta\\ChatProject\\ChatProject.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Documents\\ChatProject\\ChatProject\\obj\\",
+        "outputPath": "C:\\Users\\User\\Documents\\GitHub\\ChatProjectBeta\\ChatProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,6 +38,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Mapster": {
+              "target": "Package",
+              "version": "[7.4.1-pre01, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.20, )"

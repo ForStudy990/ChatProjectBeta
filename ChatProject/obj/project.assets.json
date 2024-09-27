@@ -15,6 +15,27 @@
           }
         }
       },
+      "Mapster/7.4.1-pre01": {
+        "type": "package",
+        "dependencies": {
+          "Mapster.Core": "1.2.2-pre01"
+        },
+        "compile": {
+          "lib/net7.0/Mapster.dll": {}
+        },
+        "runtime": {
+          "lib/net7.0/Mapster.dll": {}
+        }
+      },
+      "Mapster.Core/1.2.2-pre01": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Mapster.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net7.0/Mapster.Core.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.OpenApi/7.0.20": {
         "type": "package",
         "dependencies": {
@@ -525,6 +546,36 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "Mapster/7.4.1-pre01": {
+      "sha512": "b7YEDoh4nuODGF7wUjgkxA3bTLLt7TxfPkKiFQTgCrNYHem1VVaJyXgsG9RVeQQ44+hoo69IfqENNKn0ox9ddg==",
+      "type": "package",
+      "path": "mapster/7.4.1-pre01",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net6.0/Mapster.dll",
+        "lib/net7.0/Mapster.dll",
+        "lib/net8.0/Mapster.dll",
+        "mapster.7.4.1-pre01.nupkg.sha512",
+        "mapster.nuspec"
+      ]
+    },
+    "Mapster.Core/1.2.2-pre01": {
+      "sha512": "FuNCfTHytW9yeSuGHZ9f8u4cgbzhPL0GqoypA4LD99m0zkafs73IcaMxmbUtYjRThof+Z+jcEQ/suVYTkMpTkA==",
+      "type": "package",
+      "path": "mapster.core/1.2.2-pre01",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net6.0/Mapster.Core.dll",
+        "lib/net7.0/Mapster.Core.dll",
+        "lib/net8.0/Mapster.Core.dll",
+        "mapster.core.1.2.2-pre01.nupkg.sha512",
+        "mapster.core.nuspec"
       ]
     },
     "Microsoft.AspNetCore.OpenApi/7.0.20": {
@@ -1477,6 +1528,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Mapster >= 7.4.1-pre01",
       "Microsoft.AspNetCore.OpenApi >= 7.0.20",
       "Microsoft.EntityFrameworkCore >= 7.0.20",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.20",
@@ -1491,11 +1543,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Documents\\ChatProject\\ChatProject\\ChatProject.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\ChatProjectBeta\\ChatProject\\ChatProject.csproj",
       "projectName": "ChatProject",
-      "projectPath": "C:\\Users\\User\\Documents\\ChatProject\\ChatProject\\ChatProject.csproj",
+      "projectPath": "C:\\Users\\User\\Documents\\GitHub\\ChatProjectBeta\\ChatProject\\ChatProject.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Documents\\ChatProject\\ChatProject\\obj\\",
+      "outputPath": "C:\\Users\\User\\Documents\\GitHub\\ChatProjectBeta\\ChatProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -1522,6 +1574,10 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "Mapster": {
+            "target": "Package",
+            "version": "[7.4.1-pre01, )"
+          },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[7.0.20, )"

@@ -1,5 +1,6 @@
 ﻿using ChatProject.Context;
 using ChatProject.Entities;
+using ChatProject.Exceptions;
 using ChatProject.Repositories.Abstract;
 using Microsoft.EntityFrameworkCore;
 
@@ -32,7 +33,7 @@ public class UserChatRepository : IUserChatRepository
             await Context.UserChats
                 .SingleOrDefaultAsync(uc => uc.SenderId == senderid && uc.ChatId == chatId);
         //make a custom exception
-        if (userchat is null) throw new Exception("Not found UserChat");
+        if (userchat is null) throw new UserChatNotFoundException();
         return userchat;
     }
 }
