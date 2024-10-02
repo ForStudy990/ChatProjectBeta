@@ -84,3 +84,6 @@ C:\Users\User\Documents\GitHub\ChatProjectBeta\ChatProject\obj\Debug\net7.0\refi
 C:\Users\User\Documents\GitHub\ChatProjectBeta\ChatProject\obj\Debug\net7.0\ChatProject.pdb
 C:\Users\User\Documents\GitHub\ChatProjectBeta\ChatProject\obj\Debug\net7.0\ChatProject.genruntimeconfig.cache
 C:\Users\User\Documents\GitHub\ChatProjectBeta\ChatProject\obj\Debug\net7.0\ref\ChatProject.dll
+C:\Users\User\Documents\GitHub\ChatProjectBeta\ChatProject\bin\Debug\net7.0\ChatProject.staticwebassets.runtime.json
+C:\Users\User\Documents\GitHub\ChatProjectBeta\ChatProject\bin\Debug\net7.0\Mapster.dll
+C:\Users\User\Documents\GitHub\ChatProjectBeta\ChatProject\bin\Debug\net7.0\Mapster.Core.dll

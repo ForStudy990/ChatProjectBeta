@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "048MHoKZRy1gpxwh96WBJjtjfHMI76EJsaU+jGlRZzI=",
+  "Hash": "AT6zlC2BDrStRMXq7scqiP+sHyvdJlnSNYpfycBZ5UM=",
   "Source": "ChatProject",
   "BasePath": "_content/ChatProject",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ChatProject\\wwwroot",
+      "Source": "ChatProject",
+      "ContentRoot": "C:\\Users\\User\\Documents\\GitHub\\ChatProjectBeta\\ChatProject\\wwwroot\\",
+      "BasePath": "_content/ChatProject",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }
