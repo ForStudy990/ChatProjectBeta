@@ -1,10 +1,13 @@
-﻿using Chat.Api.Exceptions;
+﻿using Chat.Api.DTOs;
+using Chat.Api.Exceptions;
 using Chat.Api.Managers;
 using Chat.Api.Models;
 using Chat.Api.Entities;
 using Chat.Api.Repositories.Abstract;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace Chat.Api.Controllers;
 
@@ -12,22 +15,25 @@ namespace Chat.Api.Controllers;
 [ApiController]
 public class UserController : Controller
 {
+    private readonly string Key = "Users";
     private readonly UserManager _userManager;
 
     public UserController(UserManager userManager)
     {
         _userManager = userManager;
     }
-
+    [Authorize]
     [HttpGet]
     public async Task<IActionResult> GetAllUsers()
     {
-        var users = await _userManager.GetAllUsers();
+       var users = await _userManager.GetAllUsers();
+        
         return Ok(users);
     }
-
+    
+    [Authorize]
     [HttpGet("get-user-by-id")]
-    public async Task<IActionResult> GetUserById([FromBody] Guid userId)
+    public async Task<IActionResult> GetUserById(Guid userId)
     {
         try
         {
@@ -43,6 +49,37 @@ public class UserController : Controller
             return BadRequest(e.Message);
         }
 
+    }
+    
+    [Authorize]
+    [HttpPut("update-user-bio")]
+    public async Task<IActionResult> UpdateBio([FromBody] string bio)
+    {
+        var userDto = await _userManager.UpdateBio(bio);
+        return Ok(userDto);
+    }
+   
+    [Authorize]
+    [HttpPut("update-user-general-info")]
+    public async Task<IActionResult> UpdateGeneralInfo([FromBody] UpdateGeneralInfoModel model)
+    {
+        var userDto = await _userManager.UpdateGeneralInfo(model);
+        return Ok(userDto);
+    }
+    [Authorize]
+    [HttpPut("update-username")]
+    public async Task<IActionResult> UpdateUserName([FromBody] string userName)
+    {
+        var userDto = await _userManager.UpdateUserName(userName);
+        return Ok(userDto);
+    }
+    
+    [Authorize]
+    [HttpPut("update-user-password")]
+    public async Task<IActionResult> UpdatePassword([FromBody] string password)
+    {
+        var userDto = await _userManager.UpdatePassword(password);
+        return Ok(userDto);
     }
 
     [HttpPost("Register")]

@@ -18,7 +18,7 @@ public class JwtManager
 
     public string GenerateToken(User user)
     {
-        var key = System.Text.Encoding.UTF32.GetBytes(_configuration["Jwt:Key"]!);
+        var key = System.Text.Encoding.UTF32.GetBytes(JwtParametrs.Key);
         var signkey = new SigningCredentials(new SymmetricSecurityKey(key), "HS256");
 
         var claims = new List<Claim>()
@@ -28,7 +28,7 @@ public class JwtManager
         };
         
         var security = new JwtSecurityToken(issuer: JwtParametrs.Issuer,audience:JwtParametrs.Audience,
-            signingCredentials: signkey,claims: claims, expires: DateTime.Now.AddSeconds(10));
+            signingCredentials: signkey,claims: claims, expires: DateTime.Now.AddMinutes(60));
         
         var token = new JwtSecurityTokenHandler().WriteToken(security);
         return token;

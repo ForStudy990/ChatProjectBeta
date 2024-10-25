@@ -2,6 +2,7 @@
 using Chat.Api.Managers;
 using Chat.Api.Models;
 using Chat.Api.Entities;
+using Chat.Api.Helpers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Chat.Api.Controllers;
@@ -10,11 +11,13 @@ namespace Chat.Api.Controllers;
 
 public class MessageController : Controller
 {
-    private MessageManager _messageManager;
+    private readonly MessageManager _messageManager;
+    private readonly UserHelper _userHelper;
 
-    public MessageController(MessageManager messageManager)
+    public MessageController(MessageManager messageManager, UserHelper userHelper)
     {
         _messageManager = messageManager;
+        _userHelper = userHelper;
     }
 
     [HttpGet]
@@ -58,11 +61,12 @@ public class MessageController : Controller
     }
 
     [HttpPost("send-text-message")]
-    public async Task<IActionResult> SendTextMessage(Guid userId, Guid chatId,[FromBody] TextModel model)
+    public async Task<IActionResult> SendTextMessage(Guid chatId,[FromBody] TextModel model)
     {
         try
-        {
-           var message = await _messageManager.SendTextMessage(userId, chatId, model);
+        { 
+            var userId = _userHelper.GetUserId();
+           var message = await _messageManager.SendTextMessage(chatId, userId, model);
            return Ok(message);
         }
         catch (Exception e)
@@ -72,10 +76,11 @@ public class MessageController : Controller
     }
 
     [HttpPost("send-file-message")]
-    public async Task<IActionResult> SendFileMessage(Guid userId, Guid chatId, [FromBody] FileModel model)
+    public async Task<IActionResult> SendFileMessage(Guid chatId, [FromBody] FileModel model)
     {
         try
         {
+            var userId = _userHelper.GetUserId();
             var result = await _messageManager.SendFileMessage(userId, chatId, model);
             return Ok(result);
         }

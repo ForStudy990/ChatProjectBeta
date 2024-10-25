@@ -18,7 +18,9 @@ public class ChatRepository : IChatRepository
 
     public async Task<List<Entities.Chat>> GetAllChats()
     {
-        var chats = await Context.Chats.AsNoTracking().ToListAsync();
+        var chats = await Context
+            .Chats.Include(c=> c.Messages)
+            .ThenInclude(m=> m.Content).AsNoTracking().ToListAsync();
         return chats;
     }
 

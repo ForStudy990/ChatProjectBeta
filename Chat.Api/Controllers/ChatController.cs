@@ -1,17 +1,22 @@
 ﻿using Chat.Api.Managers;
 using Chat.Api.Entities;
+using Chat.Api.Helpers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Chat.Api.Controllers;
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class ChatController : Controller
 {
-    private ChatManager _manager;
+    private readonly ChatManager _manager;
+    private readonly UserHelper _userHelper;
 
-    public ChatController(ChatManager manager)
+    public ChatController(ChatManager manager, UserHelper userHelper)
     {
         _manager = manager;
+        _userHelper = userHelper;
     }
 
     [HttpGet]
@@ -29,17 +34,19 @@ public class ChatController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> AddOrEnterChat([FromBody] Guid reciverId ,Guid senderId)
+    public async Task<IActionResult> AddOrEnterChat([FromBody] Guid reciverId)
     {
+        var senderId = _userHelper.GetUserId();
         var chat = await _manager.AddOrEnterChat(reciverId, senderId);
         return Ok(chat);
     }
 
     [HttpDelete("{chatId:Guid}")]
-    public async Task<IActionResult> DeleteChat([FromRoute] Guid chatId, Guid senderId)
+    public async Task<IActionResult> DeleteChat([FromRoute] Guid chatId)
     {
         try
         {
+            var senderId = _userHelper.GetUserId();
             var result = await _manager.DeleteChat(chatId, senderId);
             return Ok(result);
         }
