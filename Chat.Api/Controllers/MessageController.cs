@@ -3,12 +3,13 @@ using Chat.Api.Managers;
 using Chat.Api.Models;
 using Chat.Api.Entities;
 using Chat.Api.Helpers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Chat.Api.Controllers;
 [Route("api/[controller]")]
 [ApiController]
-
+[Authorize]
 public class MessageController : Controller
 {
     private readonly MessageManager _messageManager;

@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Chat.Api.Managers;
 
-[Authorize]
 public class MessageManager
 {
     private readonly IUnitOfWork _userRepository;
