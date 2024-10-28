@@ -2097,11 +2097,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\ChatProjectBeta\\Chat.Api\\Chat.Api.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\cp\\ChatProjectBeta\\Chat.Api\\Chat.Api.csproj",
       "projectName": "Chat.Api",
-      "projectPath": "C:\\Users\\User\\Documents\\GitHub\\ChatProjectBeta\\Chat.Api\\Chat.Api.csproj",
+      "projectPath": "C:\\Users\\User\\Documents\\cp\\ChatProjectBeta\\Chat.Api\\Chat.Api.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Documents\\GitHub\\ChatProjectBeta\\Chat.Api\\obj\\",
+      "outputPath": "C:\\Users\\User\\Documents\\cp\\ChatProjectBeta\\Chat.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"

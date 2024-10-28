@@ -18,7 +18,7 @@ public class JwtManager
 
     public string GenerateToken(User user)
     {
-        var key = System.Text.Encoding.UTF32.GetBytes(_configuration["Jwt:Key"]!);
+        var key = System.Text.Encoding.UTF32.GetBytes(JwtParametrs.Key !);
         var signkey = new SigningCredentials(new SymmetricSecurityKey(key), "HS256");
 
         var claims = new List<Claim>()
